@@ -16,10 +16,12 @@ Written, built and tested on [Eclipse-ADT (Android Development Tools)](http://de
 Description
 -----------
 
-WeatherGPS is an Android 4.2 app that takes the user's zipcode input or calculates it using the phone's GPS, and then queries the Weather Underground database for weather information for that area. It extracts the JSON data and displays selected bits of importation information in a custom ListView. 
+WeatherGPS is an Android 4.2 app that takes the user's zipcode input or calculates it using the device's GPS, and then queries the Weather Underground database for weather information for that area. It extracts the JSON data and displays selected bits of importation information in a custom ListView. 
 
-Weather Underground allows any developer make GET requests to their servers and get weather information by zipcode, city, etc. There is no authentication protocol, so the whole thing can be done which just a browser request if you want to test this. Type this on your browser and you should get back JSON weather information for Central Park in New York City, NY:
+Weather Underground allows any developer make GET requests to their servers and get weather information by zipcode, city, etc. There is no authentication protocol, so the whole thing can be done with just a browser request if you want to test this. Type this on your browser and you should get back JSON weather information for Central Park in New York City, NY:
 http://api.wunderground.com/api/API-KEY/conditions/q/10019.json (NOTE: You must have an API Key for this to work. My API Key has been removed from this project for obvious security reasons. However, the .apk should still work)
+
+In case the user requests information for an invalid zipcode, Weather Underground will send back a JSON response with an error message. This scenario is also dealt with by the app and an appropriate response is displayed to the user.
 
 The application itself contains 2 activities. "MainActivity" containts the homepage with a textbox for manually entering zipcodes and a button to process this. Another button is present to get information from the GPS. This button also initiates the Settings panel in case the user's GPS is off. The next activity is "GetWeather" where the REST query and ListView processing goes on. Since this is an Android 4.2 application, any networking has to be done outside the main thread. The reason for this requirement is that network calls are blocking and hence can hit performance unpredictably, and it has been in effect since Android 4.0. The requirement is fulfilled using an AsnycTask method, that outsources  any tasks requiring network access to an asynchronous process. This process can further drive the application after it is finished.
 
