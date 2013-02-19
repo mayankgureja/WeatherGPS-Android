@@ -75,7 +75,7 @@ public class GetWeather extends ListActivity
 		String next;
 		String json = "";
 		String zipcode = getIntent().getStringExtra("zipcode");
-		String API_Key = "804b43cd6b47bf1b";
+		String API_Key = "";
 		String BASE_PATH = "http://api.wunderground.com/api/" + API_Key
 				+ "/conditions/q/" + zipcode + ".json";
 
