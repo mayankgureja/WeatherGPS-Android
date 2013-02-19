@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/m_gur_000/Dropbox/Android/WeatherGPS/jackson-annotations-2.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/m_gur_000/Dropbox/Android/WeatherGPS/jackson-core-2.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/m_gur_000/Dropbox/Android/WeatherGPS/jackson-databind-2.1.1.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
